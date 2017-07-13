@@ -53,7 +53,7 @@
 
                 if (Program.Q.IsReady() && Player.Instance.ManaPercent >= manaManagerQ)
                 {
-                    var minionPrediction = Program.Q.GetBestCircularCastPosition(qMinion);
+                    var minionPrediction = Program.Q.GetBestLinearCastPosition(qMinion);
 
                     if (minionPrediction.HitNumber >= qPred)
                     {

@@ -27,7 +27,7 @@
             if (t != null && menu != null)
             {
                 var card = Cards.None;
-                var alliesaroundTarget = t.CountEnemiesInRange(100);
+                var alliesaroundTarget = t.CountEnemyChampionsInRange(100);
                 var enemyW = menu["enemyW"].Cast<Slider>().CurrentValue;
                 var manaW = menu["manaW"].Cast<Slider>().CurrentValue;
 

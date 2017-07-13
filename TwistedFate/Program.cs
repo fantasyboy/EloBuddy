@@ -152,7 +152,7 @@
             Essentials.MiscMenu.Add("disableAA", new CheckBox("Disable Auto Attack during loop cycle."));
 
             // Prints Message
-            Chat.Print("TwistedBuddy 2.3 - By KarmaPanda", System.Drawing.Color.Green);
+            Chat.Print("TwistedBuddy 2.3.1 - By KarmaPanda", System.Drawing.Color.Green);
 
             // Events
             Game.OnUpdate += Game_OnUpdate;
@@ -278,7 +278,7 @@
         /// <param name="args">The Args.</param>
         private static void Game_OnUpdate(EventArgs args)
         {
-            if (!Player.Instance.IsRecalling() && !Player.Instance.IsInShopRange())
+            if (!Player.Instance.IsRecalling())
             {
                 var useY = Essentials.CardSelectorMenu["useY"].Cast<KeyBind>().CurrentValue;
                 var useB = Essentials.CardSelectorMenu["useB"].Cast<KeyBind>().CurrentValue;

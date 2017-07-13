@@ -53,10 +53,7 @@
 
                 if (Program.Q.IsReady() && Player.Instance.ManaPercent >= manaManagerQ)
                 {
-                    var minionPrediction = EntityManager.MinionsAndMonsters.GetLineFarmLocation(
-                        qMinion,
-                        Program.Q.Width,
-                        (int) Program.Q.Range);
+                    var minionPrediction = Program.Q.GetBestCircularCastPosition(qMinion);
 
                     if (minionPrediction.HitNumber >= qPred)
                     {

@@ -32,7 +32,7 @@ namespace TwistedBuddy
         static CardSelector()
         {
             Obj_AI_Base.OnProcessSpellCast += Obj_AI_Base_OnProcessSpellCast;
-            Game.OnUpdate += Game_OnGameUpdate;
+            Game.OnUpdate += Game_OnUpdate;
         }
 
         public static void StartSelecting(Cards card)
@@ -68,13 +68,13 @@ namespace TwistedBuddy
             }
         }
 
-        private static void Game_OnGameUpdate(EventArgs args)
+        private static void Game_OnUpdate(EventArgs args)
         {
             var wName = ObjectManager.Player.Spellbook.GetSpell(SpellSlot.W).Name;
             var wState = ObjectManager.Player.Spellbook.CanUseSpell(SpellSlot.W);
 
-            if ((wState == SpellState.Ready &&
-                 wName == "PickACard" &&
+            if ((wState == SpellState.Unknown &&
+                 wName.ToLower() == "pickacard" &&
                  (Status != SelectStatus.Selecting || Environment.TickCount - LastW > 500)) ||
                 ObjectManager.Player.IsDead)
             {

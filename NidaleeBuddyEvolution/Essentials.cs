@@ -240,7 +240,7 @@ namespace NidaleeBuddyEvolution
             Drawing.DrawLine(rStartPos, lStartPos, width, color);
             Drawing.DrawLine(lEndPos, rEndPos, width, color);
         }
-
+/*
         /// <summary>
         /// Item ID's for Skirmersher
         /// </summary>
@@ -273,14 +273,14 @@ namespace NidaleeBuddyEvolution
             ItemId.Trackers_Knife_Enchantment_Runic_Echoes, ItemId.Trackers_Knife_Enchantment_Sated_Devourer,
             ItemId.Trackers_Knife_Enchantment_Warrior,
         };
-
+*/
         /// <summary>
         /// Fixed for Patch 6.x
         /// </summary>
         public static void SetSmiteSlot()
         {
             SpellSlot smiteSlot;
-
+/*
             if (StalkerBladeItemIds.Any(item => Player.Instance.HasItem(item)))
             {
                 smiteSlot = ObjectManager.Player.GetSpellSlotFromName("s5_summonersmiteplayerganker");
@@ -295,9 +295,9 @@ namespace NidaleeBuddyEvolution
                 smiteSlot = ObjectManager.Player.GetSpellSlotFromName("summonersmite");
             }
             else
-            {
+            {*/
                 smiteSlot = ObjectManager.Player.GetSpellSlotFromName("summonersmite");
-            }
+            //}
 
             Program.Smite = new Spell.Targeted(smiteSlot, 500);
         }
